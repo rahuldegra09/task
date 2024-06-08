@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="style" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .active {
+            background-color: #fffef7e8;
+            /* Tailwind green-200 */
+        }
+    
+        .inactive {
+            background-color: #8b8686;
+            /* Tailwind red-400 */
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+        .box{
+            background-color: white;
+             display: flex;
+             flex-direction: column;
+            height:150px ;
+            width: 250px;
+            border-radius: 13px;
+            border-width: 2px;
+            border-color: black;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-family: serif;
+        }
+    </style>
+    
+</head>
+<body>
+    <section class="flex relative ">
+        <div class="bg-purple-400 h-screen w-[30%]">
+            <div class="relative font-serif bg-white h-24 grid grid-rows-2 px-auto mt-[100%]  ">
+                <!-- First Division -->
+                <div id="candidate-tracking" class="flex gap-2  justify-center items-center p-4 cursor-pointer active">
+                    <img src="images/Tracking.png" alt="Candidate Icon" class="w-6 h-6">
+                    <h2 >Candidate Tracking</h2>
+                </div>
+                <!-- Second Division -->
+                <div id="history" class="flex gap-2  justify-center items-center p-4 cursor-pointer inactive">
+                    <img src="images/Tracking.png" alt="History Icon" class="w-6 h-6">
+                    <h2>History</h2>
+                </div>
+            </div>
+         <div class="bg-white flex items-center justify-center rounded-3xl mx-2 absolute inset-x-0 bottom-8 w-[20%] h-10 left-4">
+            <h1 class="font-bold ">Support</h1>
+         </div>
+
+        </div>
+        <div class=" h-screen flex flex-col gap-4 w-[70%]  justify-center items-center">
+            <div class="flex gap-4 items-center">
+                <img src="images/less.png" alt="Candidate Icon" class="w-4 h-4">
+                <h1 class="font-bold text-xl">track candidate status</h1>
+                
+            </div>
+            <div class="flex gap-4 mx-4 ">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <img src="images/Tracking.png" alt="Search Icon" class="w-5 h-5">
+                    </span>
+                    <input type="text" placeholder="Enter your eamil or mobile number"class="outline-none pl-10 pr-4 py-2 rounded-3xl border border-gray-300 md:w-[400px] sm:w-[200px] bg-gray-200">
+                </div>
+                <button class="bg-purple-500 rounded-3xl text-white px-4 py-1 rounded hover:bg-purple-700 transition duration-300">
+                    Check Status
+                </button>
+            </div>
+            
+            <!-- candidate -->
+                <div id="tracking-section" class="  bg-gray-400 border-2 border-black rounded-3xl mt-6 flex flex-wrap py-2 w-[80%] mx-14  gap-6 justify-center visible ">
+
+                <div class="box   ">
+                    INFOSIS
+                    <div class="flex gap-2 justify-center items-center">
+                        <div class="bg-green-700 h-2 w-2 rounded-3xl">
+                        </div>
+                       <text class="text-green-400 font-sans text-sm">
+                        Final Round
+                       </text>
+
+                    </div>
+                </div>
+                <div class="box  ">
+                Google
+                <div class="flex gap-2 justify-center items-center">
+                    <div class="bg-yello-700 h-2 w-2 rounded-3xl">
+                    </div>
+                    <text class="text-yellow-400 font-sans text-sm">
+                        Waiting For Final Round result
+                    </text>
+                
+                </div>
+                </div>
+                <div class="box  ">
+                Microsoft
+                <div class="flex gap-2 justify-center items-center">
+                    <div class="bg-red-700 h-2 w-2 rounded-3xl">
+                    </div>
+                    <text class="text-red-400 font-sans text-sm">
+                        Screening round
+                    </text>
+                
+                </div>
+                </div>
+                <div class="box ">
+                Adobe
+                <div class="flex gap-2 justify-center items-center">
+                    <div class="bg-green-700 h-2 w-2 rounded-3xl">
+                    </div>
+                    <text class="text-green-400 font-sans text-sm">
+                        Final Round
+                    </text>
+                
+                </div>
+                </div>
+
+            </div>
+            <!-- History Code Section -->
+            <div id="history-section" class=" bg-gray-200 border-2 border-black rounded-xl flex flex-wrap pt-2 w-[90%] h-[50%] mx-auto  gap-6  hidden  overflow-scroll">
+                <h3 class="font-bold text-xl">History</h3>
+                    <div class="container mx-auto ">
+                        <div class="max-w-screen-md ">
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-xs divide-y divide-gray-200 rounded-lg overflow-hidden">
+                                    <thead class="">
+                                        <tr>
+                                            <th scope="col"
+                                                class="px-4 py-2 text-left font-medium text-black uppercase tracking-wider">
+                                                ID
+                                            </th>
+                                            <th scope="col"
+                                                class="px-4 py-2 text-left font-medium text-black uppercase tracking-wider">
+                                                Name
+                                            </th>
+                                            <th scope="col"
+                                                class="px-4 py-2 text-left font-medium text-black uppercase tracking-wider">
+                                                Email
+                                            </th>
+                                            <th scope="col"
+                                                class="px-4 py-2 text-left font-medium text-black uppercase tracking-wider">
+                                                Last Updated On
+                                            </th>
+                                            <th scope="col"
+                                                class="px-4 py-2 text-left font-medium text-black uppercase tracking-wider">
+                                                Pipeline
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white ">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-20 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200 hover:bg-white">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                    <tbody class=" divide-y divide-gray-200">
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">
+                                                    <img src="images/cat.png" alt="Candidate Icon" class="w-8 h-6 rounded-full">
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">John Doe</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">john.doe@example.com</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <div class="text-gray-900">9:30pm June 12, 2023</div>
+                                            </td>
+                                            <td class="px-4 py-2 whitespace-nowrap">
+                                                <button
+                                                    class="py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">View
+                                                    More</button>
+                                            </td>
+                                        </tr>
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>
+
+
+        </div>
+        <div class="absolute flex justify-between items-center bg-gray-200 flex w-[60%] md:top-24 h-12 rounded-full left-[20%] px-3">
+            <div class="flex items-center gap-1">
+                <img src="images/less.png" alt="Candidate Icon" class="w-4 h-4">
+               <h1 class="font-bold text-xl">
+                Employia
+               </h1>
+            </div>
+            <div>
+                 <img src="images/cat.png" alt="Candidate Icon" class="w-10 h-10 rounded-full">
+            </div>
+            
+            
+        </div>
+        <div class=" absolute bg-purple-700 w-20 h-12 top-24 right-[10%] rounded flex">
+            <div class="flex flex-col text-xs items-center">
+                <p>Credit</p>
+                <p>100</p>
+            </div>
+            <div class="flex items-center">
+                <img src="images/battery.png" alt="Candidate Icon" class="w-8 h-8">
+            </div>
+        </div>
+
+    </section>
+       <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.cursor-pointer');
+            const trackingSection = document.getElementById('tracking-section');
+            const historySection = document.getElementById('history-section');
+
+            sections.forEach(section => {
+                section.addEventListener('click', () => {
+                    // Set all sections to inactive color
+                    sections.forEach(sec => sec.classList.remove('active'));
+                    sections.forEach(sec => sec.classList.add('inactive'));
+
+                    // Set the clicked section to active color
+                    section.classList.remove('inactive');
+                    section.classList.add('active');
+
+                    // Toggle visibility of sections based on the clicked section
+                    if (section.id === 'candidate-tracking') {
+                        trackingSection.classList.remove('hidden');
+                        trackingSection.classList.add('visible');
+                        historySection.classList.remove('visible');
+                        historySection.classList.add('hidden');
+                    } else if (section.id === 'history') {
+                        historySection.classList.remove('hidden');
+                        historySection.classList.add('visible');
+                        trackingSection.classList.remove('visible');
+                        trackingSection.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
