@@ -23,6 +23,7 @@
             display: block;
         }
         .box{
+             transition: background-color 0.3s;
             background-color: white;
              display: flex;
              flex-direction: column;
@@ -35,7 +36,18 @@
             align-items: center;
             font-weight: bold;
             font-family: serif;
+            
         }
+        .view-more {
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        .box:hover .view-more {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
     
 </head>
@@ -80,7 +92,7 @@
             <!-- candidate -->
                 <div id="tracking-section" class="  bg-gray-400 border-2 border-black rounded-3xl mt-6 flex flex-wrap py-2 w-[80%] mx-14  gap-6 justify-center visible ">
 
-                <div class="box   ">
+                <div class="box hover:bg-green-200 relative">
                     INFOSIS
                     <div class="flex gap-2 justify-center items-center">
                         <div class="bg-green-700 h-2 w-2 rounded-3xl">
@@ -90,8 +102,11 @@
                        </text>
 
                     </div>
+                    <div class="view-more  absolute bottom-0  transform -translate-x-0 bg-white p-2 rounded-full shadow-md">
+                        <button class="text-red-500 font-bold">View More</button>
+                    </div>
                 </div>
-                <div class="box  ">
+                <div class="box hover:bg-red-200 relative ">
                 Google
                 <div class="flex gap-2 justify-center items-center">
                     <div class="bg-yello-700 h-2 w-2 rounded-3xl">
@@ -101,8 +116,11 @@
                     </text>
                 
                 </div>
+                <div class="view-more  absolute bottom-0  transform -translate-x-0 bg-white p-2 rounded-full shadow-md">
+                    <button class="text-red-500 font-bold">View More</button>
                 </div>
-                <div class="box  ">
+                </div>
+                <div class="box hover:bg-yellow-200 relative ">
                 Microsoft
                 <div class="flex gap-2 justify-center items-center">
                     <div class="bg-red-700 h-2 w-2 rounded-3xl">
@@ -112,8 +130,11 @@
                     </text>
                 
                 </div>
+                <div class="view-more  absolute bottom-0  transform -translate-x-0 bg-white p-2 rounded-full shadow-md">
+                    <button class="text-red-500 font-bold">View More</button>
                 </div>
-                <div class="box ">
+                </div>
+                <div class="box hover:bg-red-200 relative  ">
                 Adobe
                 <div class="flex gap-2 justify-center items-center">
                     <div class="bg-green-700 h-2 w-2 rounded-3xl">
@@ -122,6 +143,9 @@
                         Final Round
                     </text>
                 
+                </div>
+                <div class="view-more  absolute bottom-0  transform -translate-x-0 bg-white p-2 rounded-full shadow-md">
+                    <button class="text-red-500 font-bold">View More</button>
                 </div>
                 </div>
 
